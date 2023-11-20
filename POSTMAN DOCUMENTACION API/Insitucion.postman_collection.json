@@ -1,0 +1,1084 @@
+{
+	"info": {
+		"_postman_id": "efcd3c09-fb90-45d5-b09a-e96784e43825",
+		"name": "Insitucion",
+		"description": "Una institución educativa desea crear un sistema para manejar la asistencia de sus alumnos. Ellos han pedido que tenga las siguientes funcionalidades:\n\n1. Crear, Leer, Eliminar y Actualizar docentes registrados en la institución. (CRUD docentes)\n2. Crear, Leer, Eliminar y Actualizar alumnos registrados en la institución. (CRUD alumnos)\n3. Crear, Leer, Eliminar y Actualizar cursos registrados en la institución. (CRUD cursos)\n4. Matricular (enlazar) cada alumno a un curso existente.\n5. Registrar cada día la asistencia de cada alumno.\n6. Opciones de asistencia:\n    - Asistió temprano (A)\n    - Asistió tarde (T)\n    - Faltó (F)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29600377"
+	},
+	"item": [
+		{
+			"name": "Alumnos",
+			"item": [
+				{
+					"name": "Alumno all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alumno",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alumno"
+							]
+						},
+						"description": "Consigue todos los alumnos de la institucion de la tabla alumnos\n\n<img src=\"https://content.pstmn.io/be6e53f1-8eb7-4fbb-8a82-d0713951f99a/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Alumno Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alumno/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alumno",
+								"2"
+							]
+						},
+						"description": "Consigue por ID los alumnos de la institucion de la tabla alumnos\n\n<img src=\"https://content.pstmn.io/eb29d110-8cd8-416c-aa3d-d44627ae474c/aW1hZ2UucG5n\" width=\"1366\" height=\"728\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Alumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Jean Pierre\",\r\n    \"apellido\":\"Ramos\",\r\n    \"correo_electronico\":\"jean@jean\",\r\n    \"contrasena\":\"Jotita@\",\r\n    \"telefono\":\"+593 99 783 3645\",\r\n    \"direccion\":\"Embudo\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alumno",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alumno"
+							]
+						},
+						"description": "Crear un alumno en tabla alumnos\n\n<img src=\"https://content.pstmn.io/9fe6387d-9374-4a7d-b8a8-93bc8a4e9b72/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Alumno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Jean Pierre\",\r\n    \"apellido\":\"Perea\",\r\n    \"correo_electronico\":\"jean@jean\",\r\n    \"contrasena\":\"Jotita@\",\r\n    \"telefono\":\"+593 96 788 3645\",\r\n    \"direccion\":\"palmas\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alumno/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alumno",
+								"6"
+							]
+						},
+						"description": "Actualiza un alumno por su ID de creacion\n\n<img src=\"https://content.pstmn.io/8e2d0f2d-9bd9-42d6-ab73-86801edf45e7/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Alumno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alumno/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alumno",
+								"6"
+							]
+						},
+						"description": "Elimina un alumno por su ID\n\n<img src=\"https://content.pstmn.io/6aa41641-2b6c-49be-8e2d-97ca11846a24/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				}
+			],
+			"description": "Crear, Leer, Eliminar y Actualizar alumnos registrados en la institución. (CRUD alumnos)"
+		},
+		{
+			"name": "Docentes",
+			"item": [
+				{
+					"name": "Docente all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/docente",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"docente"
+							]
+						},
+						"description": "Consigue todos los docentes de la institucion de la tabla docentes\n\n<img src=\"https://content.pstmn.io/a1407154-8136-46fd-afd4-0be3868bc176/aW1hZ2UucG5n\" width=\"1366\" height=\"728\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Docente Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/docente/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"docente",
+								"2"
+							]
+						},
+						"description": "Consigue por ID los docentes de la institucion de la tabla docentes\n\n<img src=\"https://content.pstmn.io/5f568301-a0b9-448d-a6cf-747be260244f/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Docente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Joti Pierre\",\r\n    \"apellido\":\"Hurtado\",\r\n    \"correo_electronico\":\"jota@jota\",\r\n    \"contrasena\":\"amigos\",\r\n    \"telefono\":\"+593 99 783 3645\",\r\n    \"direccion\":\"Embudo\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/docente",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"docente"
+							]
+						},
+						"description": "Crear un docente en tabla docentes\n\n<img src=\"https://content.pstmn.io/68c4a1d7-9fd6-4c0c-8317-125d0c52cf1d/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Docente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Jean Pierre\",\r\n    \"apellido\":\"Perea\",\r\n    \"correo_electronico\":\"jean@jean\",\r\n    \"contrasena\":\"Jotita@\",\r\n    \"telefono\":\"+593 96 788 3645\",\r\n    \"direccion\":\"palmas\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/docente/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"docente",
+								"6"
+							]
+						},
+						"description": "Actualiza un docente por su ID de creacion\n\n<img src=\"https://content.pstmn.io/25218263-3f3d-4905-bca8-a288201dd318/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Docente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/docente/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"docente",
+								"6"
+							]
+						},
+						"description": "Elimina un docente por su ID\n\n<img src=\"https://content.pstmn.io/8e13750b-8d4f-4bd2-819a-15d5c15129c5/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				}
+			],
+			"description": "Crear, Leer, Eliminar y Actualizar docentes registrados en la institución. (CRUD docentes)"
+		},
+		{
+			"name": "Cursos",
+			"item": [
+				{
+					"name": "Curso all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/curso",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"curso"
+							]
+						},
+						"description": "Consigue todos los Cursos de la institucion de la tabla cursos\n\n<img src=\"https://content.pstmn.io/44baf366-6df5-4eea-9129-5234ab8c5bbd/aW1hZ2UucG5n\" width=\"1366\" height=\"728\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Curso Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/curso/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"curso",
+								"2"
+							]
+						},
+						"description": "Consigue por ID los Cursos de la institucion de la tabla cursos\n\n<img src=\"https://content.pstmn.io/5f568301-a0b9-448d-a6cf-747be260244f/aW1hZ2UucG5n\" width=\"1366\" height=\"728\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Cursos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Marketing\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/curso",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"curso"
+							]
+						},
+						"description": "Crear un curso en tabla cursos\n\n<img src=\"https://content.pstmn.io/51239462-6a16-4426-aa85-f027b9471efa/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cursos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Telecomunicaciones\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/curso/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"curso",
+								"6"
+							]
+						},
+						"description": "Actualiza un curso por su ID de creacion\n\n<img src=\"https://content.pstmn.io/8288b2e6-a001-439c-bede-5997e435a1e1/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cursos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/curso/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"curso",
+								"6"
+							]
+						},
+						"description": "Elimina un curso por su ID\n\n<img src=\"https://content.pstmn.io/f937767d-b0b7-46e6-803b-0ed42da01237/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				}
+			],
+			"description": "Crear, Leer, Eliminar y Actualizar docentes registrados en la institución. (CRUD cursos)"
+		},
+		{
+			"name": "Matricular",
+			"item": [
+				{
+					"name": "MaestroCurso",
+					"item": [
+						{
+							"name": "maestrocurso all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cursomaestro",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cursomaestro"
+									]
+								},
+								"description": "Consigue todos las matriculas de la institucion de la tabla curso_maestros donde el curso_id es el id de la tabla cursos y el docente_id es el id de la tabla docentes\n\n<img src=\"https://content.pstmn.io/71c0c79d-f6e4-4f37-abfa-05445f0d5d69/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						},
+						{
+							"name": "maestrocurso Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cursomaestro/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cursomaestro",
+										"1"
+									]
+								},
+								"description": "Consigue por el Id del curso_id es decir por materias el docentre matriculado a esa materia\n\n<img src=\"https://content.pstmn.io/c23cb1da-6fd9-4a19-a061-4d49f5d16be4/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						},
+						{
+							"name": "Crear maestrocurso",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"curso_id\":\"5\",\r\n    \"docente_id\":\"4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cursomaestro",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cursomaestro"
+									]
+								},
+								"description": "Matricula un profesor a un curso existente en la Institucion con su curso_id y docente_id\n\n<img src=\"https://content.pstmn.io/274463f5-d90d-4998-93e9-364d60aaa067/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar maestrocurso",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"curso_id\":\"5\",\r\n    \"docente_id\":\"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cursomaestro/12",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cursomaestro",
+										"12"
+									]
+								},
+								"description": "Actualiza una matricula buscando por el ID de la tabla de curso_maestros\n\n<img src=\"https://content.pstmn.io/87ec16a9-2e1b-448d-864a-d6b908fc4e47/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar maestrocurso",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cursomaestro/12",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cursomaestro",
+										"12"
+									]
+								},
+								"description": "Elimina una matricula por su ID\n\n<img src=\"https://content.pstmn.io/53ada41d-a2c2-4aa2-9159-e73779b3dec3/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						}
+					],
+					"description": "Crear, Leer, Eliminar y Actualizar matriculas de los docentes a los cursos registrados en la institución. (CRUD maestrocurso)"
+				},
+				{
+					"name": "AlumnoCurso",
+					"item": [
+						{
+							"name": "alumnocurso all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/matricularalumno",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"matricularalumno"
+									]
+								},
+								"description": "Consigue todos las matriculas de la institucion de la tabla alumno_cursos donde el curso_id es el id de la tabla cursos y el alumno_id es el id de la tabla alumnos\n\n<img src=\"https://content.pstmn.io/d1075db6-89cc-494e-886f-c52299c6d1af/aW1hZ2UucG5n\" width=\"1366\" height=\"728\">"
+							},
+							"response": []
+						},
+						{
+							"name": "alumnocurso Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/matricularalumno/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"matricularalumno",
+										"2"
+									]
+								},
+								"description": "Consigue por el Id del alumno\n\n<img src=\"https://content.pstmn.io/1ad06673-fec8-4b4c-b874-dd25ef093799/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						},
+						{
+							"name": "Crear alumnocurso",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"alumno_id\": 4,\r\n    \"curso_id\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/matricularalumno",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"matricularalumno"
+									]
+								},
+								"description": "Matricula un alumno a un curso existente en la Institucion con su curso_id y alumno_id\n\n<img src=\"https://content.pstmn.io/43ce0585-d109-48f4-ad4d-ca7f4c844784/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar maestrocurso Copy",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"curso_id\":\"5\",\r\n    \"alumno_id\":\"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/matricularalumno/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"matricularalumno",
+										"3"
+									]
+								},
+								"description": "Actualiza una matricula buscando por el ID de la tabla de alumno_cursos\n\n<img src=\"https://content.pstmn.io/65854e54-5d4d-4312-83d7-2c3a2a36c3a1/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar alumnocurso",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/asistencia/4",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"asistencia",
+										"4"
+									]
+								},
+								"description": "Elimina una matricula por su ID\n\n<img src=\"https://content.pstmn.io/c7ed726f-8940-4bb3-88d5-6225ded69e2a/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+							},
+							"response": []
+						}
+					],
+					"description": "Crear, Leer, Eliminar y Actualizar matriculas de los alumnos a los cursos registrados en la institución. (CRUD alumnoscursos)"
+				}
+			],
+			"description": "Crear, Leer, Eliminar y Actualizar matriculas registrados en la institución. (CRUD matriculas)"
+		},
+		{
+			"name": "Asistencia",
+			"item": [
+				{
+					"name": "asistencialumno all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/asistencia",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"asistencia"
+							]
+						},
+						"description": "Consigue la asistencia con el Id de matricula del estudiante y asistencia_id de la tabla de asistencia y fecha en que asistio\n\n<img src=\"https://content.pstmn.io/63d42f73-5c67-431f-9023-8d7f36e91e57/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "asistencialumno Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/asistencia/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"asistencia",
+								"2"
+							]
+						},
+						"description": "Consigue por el Id de la tabla asistencia\n\n<img src=\"https://content.pstmn.io/c3a623ba-1b18-4302-a109-a002c64f0653/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear asistencialumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alumnocurso_id\": \"2\",\r\n    \"asistencia_id\": \"1\",\r\n    \"fecha\": \"2023-11-1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/asistencia",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"asistencia"
+							]
+						},
+						"description": "Asistencia de un alumno a un curso existente en la Institucion con su alumnocurso_id que es el numero id de la tabla Alumno_cursos y asistencia_id que es el id de la tabla asistencias y su fecha de asistido\n\n<img src=\"https://content.pstmn.io/a51bc5cc-d100-46d5-bf40-81dfae0bf1e5/aW1hZ2UucG5n\" width=\"1366\" height=\"728\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar asistencialumno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alumnocurso_id\": \"2\",\r\n    \"asistencia_id\": \"2\",\r\n    \"fecha\": \"2023-11-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/asistencia/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"asistencia",
+								"4"
+							]
+						},
+						"description": "Actualiza una asistencia buscando por el ID de la tabla de asistencia_alumnos\n\n<img src=\"https://content.pstmn.io/c79a26d7-674b-421b-8073-e0a4e8766f0d/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar asistencialumno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/matricularalumno/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"matricularalumno",
+								"3"
+							]
+						},
+						"description": "Elimina una asistencia por su ID\n\n<img src=\"https://content.pstmn.io/f0a4fe01-620f-4149-8819-22b75e637ddc/aW1hZ2UucG5n\" alt=\"\" height=\"728\" width=\"1366\">"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
